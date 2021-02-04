@@ -1,0 +1,59 @@
+body{
+    background-color: #EBF8FF !important;
+}
+
+/* JUMBOTRON-GALERÍA */
+
+.project-img-title{
+    background-color: #C8F69B !important;
+    border-radius: 3em / 3em !important;
+    border: 2px solid #16bb2c;
+    border-style: outset !important;
+    height: 14em;
+    width: 32em;
+    text-align: center;
+    margin-top: 3.5em;
+}
+
+/* PROJECT */
+/* RECUADROS-PROJECT */
+
+.rectangle-1{
+    background-color: #f8eaa9;
+    border-radius: 5em;
+    border: 2px solid #f3c460;
+    border-style: outset;
+}
+
+.rectangle-2{
+    background-color: #e9bb59;
+    border-radius: 3em / 3em;
+    border: 2px solid #cfa54a;
+    border-style: outset;
+}
+
+.section-1{
+    width: 68.85em !important;
+    height: 8em !important;
+  }
+  
+  .section-2{
+    width: 68.85em !important;
+    height: 13em !important;
+  }
+  
+  .section-3{
+    width: 68.85em !important;
+    height: 19em !important;
+  }
+  
+  .section-4{
+    width: 68.85em !important;
+    height: 17.5em !important;
+  }
+
+  /* DROPDOWN-PROJECT */
+
+  .dropdown-align{
+      margin-top: 2em;
+  }

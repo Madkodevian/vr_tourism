@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Realidad virtual</title>
+  <link rel="icon" href="../img/faviconPez.png" type="image/png">
+  <!-- A-FRAME -->
+  <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script src="../js/vr.js"></script>
+</head>
+
+<body>
+  <a-assets>
+    <img id="amadores1" src="../img/ama21.jpg" alt="amadores1" />
+    <img id="guigui" src="../img/guigui1.jpg" alt="guigui" />
+    <audio id="wind" src="../sounds/wind.mp3" preload="auto"></audio>
+    <audio id="button" src="../sounds/button.mp3" preload="auto"></audio>
+    <audio id="beach" src="../sounds/beach.mp3" preload="auto"></audio>
+  </a-assets>
+  <a-scene>
+    <a-camera>
+      <a-cursor raycaster="object: .clickable"></a-cursor>
+    </a-camera>
+    <a-entity position="-1.7 1 -3">
+      <a-entity>
+        <a-box position="0 1 -1" rotation="2 45 4" color="#4CC3D9"
+          animation__position="property: rotation; to: 0 360 0; dir: alternate; dur: 3000; loop: true"
+          scale="0.25 0.25 0.25"></a-box>
+        <a-plane color="#A7E9D2" position="2 1 -1" width="3" height="0.25" class="clickable" vr="img: #amadores1; sound: #wind" sound="on: mouseenter; src: #button">
+          <a-text value="Amadores" color="black" align="center"></a-text>
+        </a-plane>
+      </a-entity>
+      <a-entity>
+        <a-box position="0 0.5 -1" rotation="2 45 4" color="#4CC3D9"
+          animation__position="property: rotation; to: 0 360 0; dir: alternate; dur: 3000; loop: true"
+          scale="0.25 0.25 0.25"></a-box>
+        <a-plane color="#A7E9D2" position="2 0.5 -1" width="3" height="0.25" class="clickable" vr="img: #guigui; sound: #beach" sound="on: mouseenter; src: #button">
+          <a-text value="Guigui" color="black" align="center"></a-text>
+        </a-plane>
+      </a-entity>
+    </a-entity>
+    <a-sky src="../img/ama21.jpg" id="my-sky"></a-sky>
+  </a-scene>
+</body>
+
+</html>

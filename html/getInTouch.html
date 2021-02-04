@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contacto</title>
+  <link rel="icon" href="../img/faviconPez.png" type="image/png">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/menu.css">
+  <!-- Fuentes/Tipografías -->
+  <link rel="stylesheet" href="../css/fonts.css">
+  <!-- Editar el body -->
+  <link rel="stylesheet" href="../css/body.css">
+  <!-- Estilos para el botón de búsqueda. -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="../css/searchButton.css">
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+  <!-- jQuery library -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+  <!-- Popper JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+  <!-- Latest compiled JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+  <!-- <script src="https://www.gstatic.com/firebasejs/8.2.3/firebase-app.js"></script> -->
+  <script src="https://www.gstatic.com/firebasejs/8.2.3/firebase-database.js"></script>
+
+  <script>
+    // Your web app's Firebase configuration
+    var firebaseConfig = {
+      apiKey: "AIzaSyDQJowPbmBsVzQbWtSYRWmCIwlPHHfO4AE",
+      authDomain: "playas-canarias-2531b.firebaseapp.com",
+      projectId: "playas-canarias-2531b",
+      storageBucket: "playas-canarias-2531b.appspot.com",
+      messagingSenderId: "931673706117",
+      appId: "1:931673706117:web:8e8459b796a7e5ae9323ec"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+  </script>
+
+  <!-- The core Firebase JS SDK is always required and must be listed first -->
+  <script src="https://www.gstatic.com/firebasejs/8.2.4/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.2.4/firebase-auth.js"></script>
+
+  <!-- propios -->
+  <script src="..js/auth.js"></script>
+  <script src="../js/form.js"></script>
+
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-sm sticky-top menu-bgcolor menu-font">
+    <a class="navbar-brand font-menu" href="../index.html">Inicio</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="collapsibleNavbar">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link font-menu" href="project.html">Proyecto</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link font-menu" href="gallery.html">Galería</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link font-menu" href="vr.html">Realidad virtual</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link font-menu" href="getInTouch.html">Contacto</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link font-menu" href="" id="sign-in">Iniciar sesión</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link font-menu" href="" id="sign-up">Registrarse</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link font-menu" href="" id="sign-out">Cerrar sesión</a>
+        </li>
+      </ul>
+      <div class="search-container">
+        <form action="/action_page.php">
+          <input type="text" placeholder="Buscar..." name="search">
+          <button type="submit"><i class="fa fa-search"></i></button>
+        </form>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container">
+    <br />
+    <h2>¡Contacta con nosotros!</h2>
+    <p>
+    <table class="table table-dark table-striped">
+      <thead>
+        <tr>
+          <th>Nombre</th>
+          <th>Teléfono</th>
+          <th>Email</th>
+          <th>Dirección</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Tatiana Rosales Hernández</td>
+          <td>600-000-000</td>
+          <td>madkodevian@gmail.com</td>
+          <td>Las Palmas de Gran Canaria, 35010.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="container">
+    <table class="table table-borderless">
+      <thead>
+        <tr>
+          <th>Nombre</th>
+          <th>Teléfono</th>
+          <th>Dirección</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>IES El Rincon</td>
+          <td>928-227-283 // 928-227-248</td>
+          <td>Avenida Industrial José Sánchez Peñate s/n.</td>
+        </tr>
+        <tr>
+          <td>CIFP San Cristobal</td>
+          <td>928-336-083 // 928-330-264</td>
+          <td>35016 – LAS PALMAS DE G.C.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Form -->
+  <br />
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-4">
+        <!-- Formulario de usuarios -->
+        <form id="form-1">
+          <div class="form-group">
+            <label for="name">Nombre</label>
+            <input type="text" class="form-control" name="name" value="Introduzca su nombre" id="name">
+          </div>
+          <div class="form-group">
+            <label for="surname-1">Primer apellido</label>
+            <input type="text" class="form-control" name="surname1" value="Introduzca su primer apellido"
+              id="surname-1">
+          </div>
+          <div class="form-group">
+            <label for="surname-2">Segundo apellido</label>
+            <input type="text" class="form-control" name="surname2" value="Introduzca su segundo apellido"
+              id="surname-2">
+          </div>
+          <div class="form-group">
+            <label for="address">Dirección</label>
+            <input type="text" class="form-control" name="address" value="Introduzca su dirección" id="address">
+          </div>
+          <input type="submit" name="form1" value="Enviar">
+          <input type="reset" name="btnDelete" value="Eliminar">
+
+        </form>
+      </div>
+    </div>
+  </div>
+  <br />
+
+  <!-- footer -->
+  <div class="jumbotron text-center footer footer-bgcolor menu-font">
+    <p><a href="https://twitter.com/TatianaRH707" class="font-menu" target="_blank">Twitter</a></p>
+    <p><a href="https://github.com/Madkodevian" class="font-menu" target="_blank">Github</a></p>
+    <div class="dropdown">
+      <button type="button" class="btn btn-primary dropdown-toggle footer-font" data-toggle="dropdown">
+        Institutos colaboradores
+      </button>
+      <div class="dropdown-menu">
+        <h5 class="dropdown-header">INSTITUTOS</h5>
+        <a class="dropdown-item footer-font" href="http://www3.gobiernodecanarias.org/medusa/edublog/ieselrincon/"
+          target="_blank">IES El
+          rincón.</a>
+        <a class="dropdown-item footer-font" href="https://cifpsancristobal.org/" target="_blank">CIFP
+          san
+          cristóbal.</a>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

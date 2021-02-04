@@ -1,0 +1,13 @@
+/* MENÚ */
+.menu-font{
+    font-family: 'Yusei Magic', sans-serif !important;
+}
+
+/* LINKS DE LAS TIPOGRAFÍAS DE GOOGLE FONTS */
+/* TIPOGRAFÍA: YUSEI MAGIC */
+@font-face {
+    font-family: 'Yusei Magic';
+    src: url(../fonts/YuseiMagic-Regular.ttf);
+}
+
+/*Comment*/
