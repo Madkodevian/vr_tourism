@@ -27,8 +27,9 @@
     <!-- Latest compiled JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
-    <!-- <script src="https://www.gstatic.com/firebasejs/8.2.3/firebase-app.js"></script> -->
-    <script src="https://www.gstatic.com/firebasejs/8.2.3/firebase-database.js"></script>
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.2.4/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.4/firebase-auth.js"></script>
 
     <script>
         // Your web app's Firebase configuration
@@ -86,7 +87,7 @@
             <div class="search-container">
                 <form action="/action_page.php">
                     <input type="text" placeholder="Buscar..." name="search">
-                    <button type="submit"><i class="fa fa-search"></i></button>
+                    <button type="submit"><em class="fa fa-search"></em></button>
                 </form>
             </div>
         </div>
@@ -138,6 +139,11 @@
                     san
                     cristóbal.</a>
             </div>
+        </div>
+        <div>
+            <a type="application/rss+xml" href="../xml/rss.xml">
+                <img class="rss-img" src="../img/rss.png" alt="weather">
+            </a>
         </div>
     </div>
 </body>

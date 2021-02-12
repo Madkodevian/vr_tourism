@@ -27,9 +27,6 @@
   <!-- Latest compiled JavaScript -->
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
-  <!-- <script src="https://www.gstatic.com/firebasejs/8.2.3/firebase-app.js"></script> -->
-  <script src="https://www.gstatic.com/firebasejs/8.2.3/firebase-database.js"></script>
-
   <script>
     // Your web app's Firebase configuration
     var firebaseConfig = {
@@ -54,7 +51,7 @@
 </head>
 
 <body data-spy="scroll" data-target="#myScrollspy" data-offset="50">
-  <nav class="navbar navbar-expand-sm sticky-top menu-bgcolor menu-font">
+  <nav class="navbar navbar-expand-sm sticky-top menu-bgcolor menu-font" aria-label="menu">
     <a class="navbar-brand font-menu" href="../index.html">Inicio</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
       <span class="navbar-toggler-icon"></span>
@@ -86,7 +83,7 @@
       <div class="search-container">
         <form action="/action_page.php">
           <input type="text" placeholder="Buscar..." name="search">
-          <button type="submit"><i class="fa fa-search"></i></button>
+          <button type="submit"><em class="fa fa-search"></em></button>
         </form>
       </div>
     </div>
@@ -99,7 +96,7 @@
     <div class="row">
       <!-- myScrollspy class-->
       <!-- un scrollspy es para, segun vas navegando por la página, se marca en un menu el lugar en el que estás situado. -->
-      <nav class="col-sm-3 col-xs-hidden">
+      <nav class="col-sm-3 col-xs-hidden" aria-label="scrollspy-1">
         <ul class="nav nav-pills flex-column sticky-top-2">
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle font-menu" data-toggle="dropdown" href="#">Amadores</a>
@@ -181,7 +178,7 @@
   <!-- GÜI GÜI -->
   <div class="container-fluid">
     <div class="row">
-      <nav class="col-sm-3 col-4 myScrollspy">
+      <nav class="col-sm-3 col-4 myScrollspy" aria-label="scrollspy-2">
         <ul class="nav nav-pills flex-column sticky-top-2">
           <li class="nav-item dropdown dropdown-align">
             <a class="nav-link dropdown-toggle font-menu" data-toggle="dropdown" href="#">Güi Güi</a>
@@ -271,6 +268,11 @@
           san
           cristóbal.</a>
       </div>
+    </div>
+    <div>
+      <a type="application/rss+xml" href="../xml/rss.xml">
+        <img class="rss-img" src="../img/rss.png" alt="weather">
+      </a>
     </div>
   </div>
 </body>
