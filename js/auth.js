@@ -29,8 +29,8 @@ function checkIfUserIsLoggedIn() {
 }
 
 function login(){
-  var email = "tiburcio.cruz@gmail.com";
-  var password = "tiburcio";
+  var email = "madkodevian@gmail.com";
+  var password = "123456";
 
   firebase.auth().signInWithEmailAndPassword(email, password).then((user) => {
     console.log("User logged in");

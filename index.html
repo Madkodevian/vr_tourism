@@ -27,8 +27,9 @@
     <!-- Latest compiled JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
-    <!-- <script src="https://www.gstatic.com/firebasejs/8.2.3/firebase-app.js"></script> -->
-    <script src="https://www.gstatic.com/firebasejs/8.2.3/firebase-database.js"></script>
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.2.4/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.4/firebase-auth.js"></script>
 
     <script>
         // Your web app's Firebase configuration
@@ -44,13 +45,8 @@
         firebase.initializeApp(firebaseConfig);
     </script>
 
-    <!-- The core Firebase JS SDK is always required and must be listed first -->
-    <script src="https://www.gstatic.com/firebasejs/8.2.4/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.2.4/firebase-auth.js"></script>
-
     <!-- propios -->
     <script src="js/auth.js"></script>
-
 </head>
 
 <body>
@@ -75,7 +71,7 @@
                     <a class="nav-link font-menu" href="html/getInTouch.html">Contacto</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link font-menu" href="">Iniciar sesión</a>
+                    <a class="nav-link font-menu" href="" id="sign-in">Iniciar sesión</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link font-menu" href="" id="sign-up">Registrarse</a>
@@ -87,7 +83,7 @@
             <div class="search-container">
                 <form action="/action_page.php">
                     <input type="text" placeholder="Buscar..." name="search">
-                    <button type="submit"><i class="fa fa-search"></i></button>
+                    <button type="submit"><em class="fa fa-search"></i></button>
                 </form>
             </div>
         </div>
@@ -112,7 +108,7 @@
                 <br>
 
                 <!-- Carousel -->
-                <div id="demo" class="carousel slide" data-ride="carousel">
+                <div id="demo" class="carousel slide align-carousel" data-ride="carousel">
                     <!-- Indicators -->
                     <ul class="carousel-indicators">
                         <li data-target="#demo" data-slide-to="0" class="active"></li>
@@ -145,6 +141,13 @@
         </div>
     </div>
 
+    <!-- SCRIPT WEATHER -->
+    <div>
+        <br />
+        <script
+            src="http://www.aemet.es/es/eltiempo/prediccion/municipios/launchwidget/palmas-de-gran-canaria-las-id35016?w=g4p11111111ohmffffffw774z302x4f86d9t95b6e9r1s6n2"></script>
+    </div>
+
     <!-- footer -->
     <div class="jumbotron text-center footer footer-bgcolor menu-font">
         <p><a href="https://twitter.com/TatianaRH707" class="font-menu" target="_blank">Twitter</a></p>
@@ -162,6 +165,11 @@
                     san
                     cristóbal.</a>
             </div>
+        </div>
+        <div>
+            <a type="application/rss+xml" href="xml/rss.xml">
+                <img class="rss-img" src="img/rss.png" alt="weather">
+            </a>
         </div>
     </div>
 </body>
