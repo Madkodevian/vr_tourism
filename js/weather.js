@@ -86,7 +86,6 @@ var teaser = function(box) {
 
   onMouseEnter = function(e) {
     e.stopImmediatePropagation();
-    var $element = $(this);
   }
 
   onMouseMove = function(e) {
