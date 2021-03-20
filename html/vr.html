@@ -10,7 +10,7 @@
   <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <script src="../js/vr.js"></script>
-  <script src="../js/vrProof.js"></script>
+  <script src="../js/weather.js"></script>
   <link rel="stylesheet" href="../css/temperature.css">
 </head>
 
@@ -33,57 +33,67 @@
         <a-box position="0.5 1.5 -1" rotation="2 45 4" color="#4CC3D9"
           animation__position="property: rotation; to: 0 360 0; dir: alternate; dur: 3000; loop: true"
           scale="0.25 0.25 0.25"></a-box>
-        <a-plane color="#A7E9D2" position="2 1.5 -1" width="2.2" height="0.25" class="clickable" vr="img: #playaIngles; sound: #beach" sound="on: mouseenter; src: #button">
+        <a-plane color="#A7E9D2" position="2 1.5 -1" width="2.2" height="0.25" class="clickable"
+          vr="img: #playaIngles; sound: #beach" sound="on: mouseenter; src: #button">
           <a-text value="Playa del ingles" color="black" align="center"></a-text>
         </a-plane>
       </a-entity>
       <!-- INFO -->
       <a-entity>
-        <a-plane color="#A7E9D2" position="4.1 1.5 -1" width="1.5" height="0.25" class="clickable" vr="img: #info; sound: #beach" sound="on: mouseenter; src: #button">
+        <a-plane color="#A7E9D2" position="4.1 1.5 -1" width="1.5" height="0.25" class="clickable"
+          vr="img: #info; sound: #beach" sound="on: mouseenter; src: #button">
           <a-text value="Informacion" color="black" align="center"></a-text>
         </a-plane>
       </a-entity>
 
       <!-- INFO TEMP -->
       <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
-<script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
-<div class="weather">
-  <section class="weather__teaser">
-    <article class="weather-teaser__web">
-      <header>
-        <span class="weather-symbol is-sunny is-white"></span>
-        <h1>32°C</h1>
-        <p class="hour">23:00</p>
-        <img src="https://3.bp.blogspot.com/-Cuk0mIWimLg/VSWNRcciYWI/AAAAAAAAfmg/amgrLwnh62g/s1600/Milky-Way-Galaxy-Mount-Rainier.jpg" class="image-style-teaser-work">
-      </header>
-      <main class="main-content">
-        <article class="weather-column">
-          <span class="weather-symbol is-rainy"></span>
-          <p class="day">Sun</p>
-          <p class="temperature">26°</p>
-        </article>
-        <article class="weather-column is-active">
-          <span class="weather-symbol is-sunny"></span>
-          <p class="day">Mon</p>
-          <p class="temperature">32°</p>
-        </article>
-        <article class="weather-column">
-          <span class="weather-symbol is-foggy"></span>
-          <p class="day">Tue</p>
-          <p class="temperature">28°</p>
-        </article>
-      </main>
-    </article>
-  </section>
-</div>
+      <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+      <div class="weather">
+        <main class="main-content">
+          <section class="weather__teaser">
+            <h2>Weather0</h2>
+            <article class="weather-teaser__web">
+              <header>
+                <span class="weather-symbol is-sunny is-white"></span>
+                <h2>32°C</h2>
+                <p class="hour">23:00</p>
+                <img
+                  src="https://3.bp.blogspot.com/-Cuk0mIWimLg/VSWNRcciYWI/AAAAAAAAfmg/amgrLwnh62g/s1600/Milky-Way-Galaxy-Mount-Rainier.jpg"
+                  class="image-style-teaser-work" alt="img1">
+              </header>
+
+              <article class="weather-column">
+                <h2>weather1</h2>
+                <span class="weather-symbol is-rainy"></span>
+                <p class="day">Sun</p>
+                <p class="temperature">26°</p>
+              </article>
+              <article class="weather-column is-active">
+                <h2>Weather2</h2>
+                <span class="weather-symbol is-sunny"></span>
+                <p class="day">Mon</p>
+                <p class="temperature">32°</p>
+              </article>
+              <article class="weather-column">
+                <h2>Weather3</h2>
+                <span class="weather-symbol is-foggy"></span>
+                <p class="day">Tue</p>
+                <p class="temperature">28°</p>
+              </article>
+            </article>
+          </section>
+        </main>
+      </div>
       <!-- FIN INFO TEMP -->
       <!-- END INFO -->
       <a-entity>
         <a-box position="0.5 1 -1" rotation="2 45 4" color="#4CC3D9"
           animation__position="property: rotation; to: 0 360 0; dir: alternate; dur: 3000; loop: true"
           scale="0.25 0.25 0.25"></a-box>
-        <a-plane color="#A7E9D2" position="2 1 -1" width="2.2" height="0.25" class="clickable" vr="img: #amadores1; sound: #wind" sound="on: mouseenter; src: #button">
+        <a-plane color="#A7E9D2" position="2 1 -1" width="2.2" height="0.25" class="clickable"
+          vr="img: #amadores1; sound: #wind" sound="on: mouseenter; src: #button">
           <a-text value="Amadores" color="black" align="center"></a-text>
         </a-plane>
       </a-entity>
@@ -91,7 +101,8 @@
         <a-box position="0.5 0.5 -1" rotation="2 45 4" color="#4CC3D9"
           animation__position="property: rotation; to: 0 360 0; dir: alternate; dur: 3000; loop: true"
           scale="0.25 0.25 0.25"></a-box>
-        <a-plane color="#A7E9D2" position="2 0.5 -1" width="2.2" height="0.25" class="clickable" vr="img: #guigui; sound: #beach" sound="on: mouseenter; src: #button">
+        <a-plane color="#A7E9D2" position="2 0.5 -1" width="2.2" height="0.25" class="clickable"
+          vr="img: #guigui; sound: #beach" sound="on: mouseenter; src: #button">
           <a-text value="Guigui" color="black" align="center"></a-text>
         </a-plane>
       </a-entity>
