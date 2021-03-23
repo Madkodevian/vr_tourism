@@ -2,12 +2,11 @@
 //Llamada a un método.
 window.onload = initializeForm();
 const db = firebase.firestore();
-var form;
 var refForm;
 
 //MAIN
 function inicializeForm() {
-    form = document.getElementById("form");
+    const form = document.getElementById("form");
     form.addEventListener("submit", sendFormToFirebase, false);
     refForm = firebase.database().ref().child("form");
     showFormToFirebase();
@@ -21,16 +20,17 @@ function showFormToFirebase() {
 
 // guardar el contenido introducido
 function sendFormToFirebase(event) {
-    const form = document.getElementById("form");
-    form.addEventListener("submit", async (event)=> {
-        event.preventDefault();
+    form.addEventListener("submit", async (e)=> {
+        e.preventDefault();
         const name = form["name"].value;
         const surname1 = form["surname-1"].value;
         const surname2 = form["surname-2"].value;
         const address = form["address"].value;
         const response = await db.collection("Tasks").doc().set({
             name,
-            surname1
+            surname1,
+            surname2,
+            address
         })
         console.log(response)
         form.reset();
