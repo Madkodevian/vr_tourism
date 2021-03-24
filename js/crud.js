@@ -1,14 +1,15 @@
 //Presionar F1 para abrir ventana arriba, live server.
 //Llamada a un método.
-window.onload = initializeForm();
+window.onload = initializeForm;
 const db = firebase.firestore();
 var refForm;
 
 //MAIN
-function inicializeForm() {
+function initializeForm() {
     const form = document.getElementById("form");
     form.addEventListener("submit", sendFormToFirebase, false);
-    refForm = firebase.database().ref().child("form");
+    refForm = firebase.firestore().ref().child("form");
+    console.log("holi")
     showFormToFirebase();
 }
 
