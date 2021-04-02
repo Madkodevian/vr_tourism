@@ -1,6 +1,6 @@
 /* MENÚ */
 .menu-font{
-    font-family: 'Yusei Magic', sans-serif !important;
+    font-family: 'Recursive' !important;
 }
 
 /* LINKS DE LAS TIPOGRAFÍAS DE GOOGLE FONTS */
@@ -8,4 +8,22 @@
 @font-face {
     font-family: 'Yusei Magic';
     src: url(../fonts/YuseiMagic-Regular.ttf);
+}
+
+/* TIPOGRAFÍA: NUNITO */
+@font-face {
+    font-family: 'Nunito';
+    src: url(../fonts/Nunito/Nunito-Bold.ttf);
+}
+
+/* TIPOGRAFÍA: RECURSIVE */
+@font-face {
+    font-family: 'Recursive';
+    src: url(../fonts/Recursive/Recursive-VariableFont_CASL,CRSV,MONO,slnt,wght.ttf);
+}
+
+/* TIPOGRAFÍA: NOTO_SANS_JP */
+@font-face {
+    font-family: 'Noto_Sans_JP';
+    src: url(../fonts/Noto_Sans_JP/NotoSansJP-Medium.ttf);
 }

@@ -25,3 +25,8 @@
 .footer-font{
     color: #000000 !important;
 }
+
+/* CUADRO DE BÚSQUEDA */
+.search-form{
+    margin-left:15em;
+}

@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Proyecto</title>
+  <link rel="icon" href="../img/faviconPez.png" type="image/png">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/menu.css">
+  <!-- Fuentes/Tipografías -->
+  <link rel="stylesheet" href="../css/fonts.css">
+  <!-- Editar el body -->
+  <link rel="stylesheet" href="../css/body.css">
+  <!-- Estilos para el botón de búsqueda. -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="../css/searchButton.css">
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+  <!-- jQuery library -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+  <!-- Popper JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+  <!-- Latest compiled JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+  <!-- The core Firebase JS SDK is always required and must be listed first -->
+  <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-app.js"></script>
+
+  <!-- Firebase store -->
+  <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-firestore.js"></script>
+
+  <!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+
+  <script>
+    // Your web app's Firebase configuration
+    var firebaseConfig = {
+      apiKey: "AIzaSyDQJowPbmBsVzQbWtSYRWmCIwlPHHfO4AE",
+      authDomain: "playas-canarias-2531b.firebaseapp.com",
+      databaseURL: "https://playas-canarias-2531b-default-rtdb.firebaseio.com",
+      projectId: "playas-canarias-2531b",
+      storageBucket: "playas-canarias-2531b.appspot.com",
+      messagingSenderId: "931673706117",
+      appId: "1:931673706117:web:8e8459b796a7e5ae9323ec"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+  </script>
+
+  <!-- Firebase auth -->
+  <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-auth.js"></script>
+
+  <!-- propios -->
+  <script src="../js/auth.js"></script>
+
+</head>
+<!-- MENÚ PRINCIPAL -->
+<nav class="navbar navbar-expand-sm sticky-top menu-bgcolor menu-font" aria-label="menú">
+  <a class="navbar-brand font-menu" href="../index.html">Inicio</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="collapsibleNavbar">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link font-menu" href="../index.html">Tour VR&nbsp;</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link font-menu" href="acommodation.html">Alojamientos&nbsp;</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link font-menu" href="gastronomy.html">Gastronomía&nbsp;</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link font-menu" href="native.html">Autóctono&nbsp;</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link font-menu" href="gallery.html">Galería&nbsp;</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link font-menu" href="getInTouch.html">Contactar&nbsp;</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link font-menu" href="" id="sign-in">Iniciar sesión&nbsp;</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link font-menu" href="" id="sign-up">Registrarse&nbsp;</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link font-menu" href="" id="sign-out">Cerrar sesión&nbsp;</a>
+      </li>
+    </ul>
+
+      <!-- CAMBIAR EL /ACTION_PAGE.PHP PARA QUE FUNCIONE -->
+      <div class="search-container search-form">
+        <form action="/action_page.php">
+          <label for="search"></label>
+          <input type="search" id="search" placeholder="Escriba aquí..." name="search">
+          <input type="submit" value="Buscar">
+        </form>
+      </div>
+    </div>
+  </nav>
+<br />
+
+<!-- EL SCROLLSPY -->
+<!-- AMADORES -->
+<div class="container-fluid">
+  <div class="row">
+    <!-- myScrollspy class-->
+    <!-- un scrollspy es para, segun vas navegando por la página, se marca en un menu el lugar en el que estás situado. -->
+    <nav class="col-sm-3 col-xs-hidden" aria-label="scrollspy-1">
+      <ul class="nav nav-pills flex-column sticky-top-2">
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle font-menu" data-toggle="dropdown" href="#">Amadores</a>
+          <div class="dropdown-menu">
+            <a class="dropdown-item font-menu" href="#section1">Descripción</a>
+            <a class="dropdown-item font-menu" href="#section2">Hoteles</a>
+            <a class="dropdown-item font-menu" href="#section3">Restaurantes</a>
+          </div>
+        </li>
+      </ul>
+    </nav>
+    <div class="col-sm-9 col-8">
+      <div class="margin other-styles-1 rectangle-1 section-1">
+        <h1>Un paraíso de ensueño</h1>
+        <p>En el archipiélago canario existe una gran variedad de opciones para disfrutar del mar: playas de arena
+          fina, de atardeceres imposibles, arenales negros, calas de colores mágicos...
+          Aquí te presentamos algunas de las playas, concretamente, en la isla de Gran Canaria.
+        </p>
+      </div>
+      <div class="margin other-styles-4 rectangle-1 section-2" id="section1">
+        <p>
+        <h1>Amadores</h1>
+        <p>Está situada en el suroeste de la isla de Gran Canaria. Es una playa con casi 500
+          metros de longitud, de aguas en calma y sin oleaje al estar protegida por dos diques.
+          Sus suaves arenas blancas y doradas invitan a tomar el sol todo el día tumbados en
+          una hamaca o flotar durante horas en una orilla de aguas cristalinas, ya que aquí
+          no están permitidos ni la música ni los juegos de pelota.
+          Y con la llegada de la tarde, nada como ver desde la misma hamaca al sol ocultarse
+          lentamente tras la isla vecina de Tenerife. (Este punto podría ir en algún lugar de la
+          arena).
+        </p>
+      </div>
+      <div class="margin other-styles-4 rectangle-2 section-3" id="section2">
+        <p>
+        <h2>Alojamientos</h2>
+        <strong>Holiday Club Jardin Amadores 5 estrellas</strong>
+        <br />
+        El Holiday Club Jardín Amadores, situado en Amadores, ofrece alojamiento con balcón privado, restaurante,
+        recepción 24 horas, servicio de venta de entradas, conexión WiFi gratuita, vistas al mar...
+        <br />
+        <em>Puntuación: 8.9</em>
+        <br />
+        <br />
+        <p>
+          <strong>Beyond Amadores C&H Suite Nº4</strong>
+          <br />
+          El Beyond Amadores C&H Suite está situado en Amadores, a 1,2 km de Playa de Tauro, y ofrece
+          alojamiento con WiFi gratuita, aire acondicionado y piscina al aire libre.
+          <br />
+          <em>Puntuación: 9.5</em>
+        </p>
+      </div>
+      <div class="margin other-styles-4 rectangle-2 section-4" id="section3">
+        <p>
+        <h2>Gastronomía</h2>
+        <strong>Webers Restaurant</strong>
+        <br />
+        Opiniones de los clientes:
+        <br />
+        <em>“Servicio increíble y buena comida”.</em>
+        <br />
+        <em>“Muy buena opción”.</em>
+        <br />
+
+        <strong>Vivaldi Restaurante Italiano</strong>
+        <br />
+        Opiniones de los clientes:
+        <br />
+        <em>“La mejor pizza”.</em>
+        <br />
+        <em>“Espectacular”.</em>
+        <br />
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- EL SCROLLSPY -->
+<!-- GÜI GÜI -->
+<div class="container-fluid">
+  <div class="row">
+    <nav class="col-sm-3 col-4 myScrollspy" aria-label="scrollspy-2">
+      <ul class="nav nav-pills flex-column sticky-top-2">
+        <li class="nav-item dropdown dropdown-align">
+          <a class="nav-link dropdown-toggle font-menu" data-toggle="dropdown" href="#">Güi Güi</a>
+          <div class="dropdown-menu">
+            <a class="dropdown-item font-menu" href="#section4">Descripción</a>
+            <a class="dropdown-item font-menu" href="#section5">Hoteles</a>
+            <a class="dropdown-item font-menu" href="#section6">Restaurantes</a>
+          </div>
+        </li>
+      </ul>
+    </nav>
+    <div class="col-sm-9 col-8">
+      <div class="margin other-styles-4 rectangle-1 section-2" id="section4">
+        <p>
+        <h1>Güi Güi</h1>
+        <p>Hoy en día quedan pocas playas vírgenes en Gran Canaria, la playa de Güigüi es una de ellas.
+          Esto es así gracias a su difícil acceso, por lo que se convierte en un paraíso terrenal en el
+          que podrás disfrutar de unas inmensas y hermosas playas prácticamente para ti solo. Además, se
+          encuentra en una zona de elevado valor medioambiental al ser uno de los principales núcleos
+          del territorio de Gran Canaria que es Reserva Mundial de la Biosfera.
+        </p>
+      </div>
+      <div class="margin other-styles-4 rectangle-2 section-3" id="section5">
+        <p>
+        <h2>Alojamientos</h2>
+        <strong>Apartamento canarias</strong>
+        <br />
+        El Apartamento canarias se encuentra en San Nicolás, a 6 km de la playa de Guigui,
+        en una zona donde se puede practicar snorkel. Este establecimiento ofrece acceso a una pista de tenis.
+        <br />
+        <em>Puntuación: 8.8</em>
+        <br />
+        <br />
+        <p>
+          <strong>La Aldea Suites</strong>
+          <br />
+          La Aldea Suites se encuentra en San Nicolás, en el oeste de Gran Canaria, y
+          ofrece suites que combinan un diseño rústico y moderno. Cuenta con una
+          terraza con piscina y bañera de hidromasaje.
+          <br />
+          <em>Puntuación: 8.4</em>
+        </p>
+      </div>
+      <div class="margin other-styles-4 rectangle-2 section-4" id="section6">
+        <p>
+        <h2>Gastronomía</h2>
+        <strong>Restaurante Casa Enrique</strong>
+        <br />
+        Opiniones de los clientes:
+        <br />
+        <em>“Espectacular si quieres comer comida típica Canaria. Trato estupendo. Recomiendo probar los aguacates de
+          su propio huerto”.</em>
+        <br />
+        <em>“Paramos para comer en Mogán y este restaurante fue un acierto. Ambiente agradable, muy buena comida y
+          personal atento. ¡Muy recomendable!”.</em>
+        <br />
+
+        <strong>Restaurante grill las cañadas</strong>
+        <br />
+        Opiniones de los clientes:
+        <br />
+        <em>“Buena comida a buen precio y con unas vistas de las montañas espectaculares. Recomiendo pedir el pollo de
+          la casa”.</em>
+        <br />
+        <em>“Un sitio en un lugar perdido que merece mucho la pena visitar. El zumo de la casa buenísimo y
+          natural”.</em>
+        <br />
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- footer -->
+<div class="jumbotron text-center footer footer-bgcolor menu-font">
+  <p><a href="https://twitter.com/TatianaRH707" class="font-menu" target="_blank">Twitter</a></p>
+  <p><a href="https://github.com/Madkodevian" class="font-menu" target="_blank">Github</a></p>
+  <div class="dropdown">
+    <button type="button" class="btn btn-primary dropdown-toggle footer-font" data-toggle="dropdown">
+      Institutos colaboradores
+    </button>
+    <div class="dropdown-menu">
+      <h5 class="dropdown-header">INSTITUTOS</h5>
+      <a class="dropdown-item footer-font" href="http://www3.gobiernodecanarias.org/medusa/edublog/ieselrincon/"
+        target="_blank">IES El
+        rincón.</a>
+      <a class="dropdown-item footer-font" href="https://cifpsancristobal.org/" target="_blank">CIFP
+        san
+        cristóbal.</a>
+    </div>
+  </div>
+  <div>
+    <a type="application/rss+xml" href="../xml/rss.xml">
+      <img class="rss-img" src="../img/rss.png" alt="weather">
+    </a>
+  </div>
+</div>
+</body>
+
+</html>
