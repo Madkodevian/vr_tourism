@@ -1,47 +1,34 @@
-// window.onload = inicialize;
-// var form1;
-// var refForm;
+//Presionar F1 para abrir ventana arriba, live server.
+//Iniciar los métodos:
+window.onload = inicialize;
+//Variables globales:
+var form;
+var refForm;
 
-// function inicialize() {
-//     form1 = document.getElementById("form-1");
-//     form1.addEventListener("submit", sendFormToFirebase, false);
+function inicialize() {
+    form = document.getElementById("form");
+    form.addEventListener("submit", sendFormToFirebase, false);
+    //Referencia a la base de datos:
+    refForm = firebase.database().ref().child("form");
+    //Se indica "child" porque es un hijo del nodo raíz de la bbdd, es decir, del form.
+    showFormToFirebase();
+}
 
-//     refForm = firebase.database().ref().child("form");
-//     showFormToFirebase();
-// }
+function showFormToFirebase() {
+    refForm.on("value", function (snap) {
+        console.log(snap.val())
+    })
+}
 
-// function showFormToFirebase() {
-//     refForm.on("value", function (snap) {
-//         console.log(snap.val())
-//     })
-// }
-
-// function sendFormToFirebase(event) {
-//     event.preventDefault();
-//     refForm.push({
-//         name: event.target.name.value,
-//         surname1: event.target["surname1"].value,
-//         surname2: event.target["surname2"].value,
-//         address: event.target.address.value
-//     });
-//     form1.reset();
-// }
-
-// //botón BORRAR
-// $(document).on("click", ".btnDelete", function () {
-//     file = $(this).closest("tr");
-//     id = parseInt(fila.find("td:eq(0)").text());
-//     option = 3; //borrar
-//     var answer = confirm("¿Está seguro que desea eliminar el registro" + id + "?");
-//     if (answer) {
-//         $.ajax({
-//             url: "bd/crud.php",
-//             type: "POST",
-//             dataType: "json",
-//             data: { option: option, id: id },
-//             success: function () {
-//                 tablePeople.row(file.parents("tr").remove().draw());
-//             }
-//         });
-//     }
-// });
+//Enviar el formulario a la base de datos:
+function sendFormToFirebase(event) {
+    event.preventDefault();
+    refForm.push({
+        name: event.target.name.value,
+        surname: event.target.surname.value,
+        phone: event.target.phone.value,
+        email: event.target.email.value,
+        comment: event.target.comment.value
+    });
+    form.reset();
+}

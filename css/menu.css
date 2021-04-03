@@ -1,5 +1,5 @@
 .menu-bgcolor{
-    background-color: #6CC9E3 !important;
+    background-color: rgba(143, 194, 228, 0.795) !important;
 }
 
 .font-menu{
@@ -29,4 +29,9 @@
 /* CUADRO DE BÚSQUEDA */
 .search-form{
     margin-left:15em;
+}
+
+/* CUADRO DE BÚSQUEDA EN CONTACTAR */
+.search-form-getintouch{
+    margin-left:7em;
 }
