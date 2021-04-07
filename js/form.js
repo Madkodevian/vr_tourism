@@ -52,7 +52,7 @@ function showFormToFirebase() {
                                 "<td></td>" +
                           "</tr>";
         }
-        //Devuelve o establece la sintaxis HTML describiendo los descendientes del elemento.
+        //(.innerHTML)Devuelve o establece la sintaxis HTML describiendo los descendientes del elemento.
         //En este caso, manda los datos de "rowstoshow" al tbody para mostrarlos.
         tbodyTableForm.innerHTML = rowsToShow;
     })
