@@ -40,16 +40,21 @@ function showFormToFirebase() {
         var info = snap.val();
         var rowsToShow = "";
         //FOR EACH. Por cada clave en los datos:
-        for(var key in datos){
+        for(var key in info){
             //muestra una fila. Es una String para realizar (concatenar) las filas (con tr). Y celdas (td).
             rowsToShow += "<tr>" +
-                                "<td>"+ datos[key].name +"</td>" +
-                                "<td>"+ datos[key].surname +"</td>" +
-                                "<td>"+ datos[key].phone +"</td>" +
-                                "<td>"+ datos[key].email +"</td>" +
-                                "<td>"+ datos[key].comment +"</td>" +
+                                "<td>"+ info[key].name +"</td>" +
+                                "<td>"+ info[key].surname +"</td>" +
+                                "<td>"+ info[key].phone +"</td>" +
+                                "<td>"+ info[key].email +"</td>" +
+                                "<td>"+ info[key].comment +"</td>" +
                                 "<td></td>" +
-                                "<td></td>" +
+                                //DELETE:
+                                '<td>' +
+                                    '<button class="btn btn-danger">' +
+                                        '<span class="glyphicon glyphicon-trash"></span>' +
+                                    '</button>' +
+                                '</td>' +
                           "</tr>";
         }
         //(.innerHTML)Devuelve o establece la sintaxis HTML describiendo los descendientes del elemento.
@@ -57,3 +62,8 @@ function showFormToFirebase() {
         tbodyTableForm.innerHTML = rowsToShow;
     })
 }
+
+//UPDATE:
+
+//DELETE:
+//El icono para borrar, está en el mismo apartado que el de [READ]. glyphicon-trash.
