@@ -57,5 +57,3 @@ function showFormToFirebase() {
         tbodyTableForm.innerHTML = rowsToShow;
     })
 }
-
-
