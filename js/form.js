@@ -51,8 +51,8 @@ function showFormToFirebase() {
                                 "<td></td>" +
                                 //DELETE:
                                 '<td>' +
-                                    '<button class="btn btn-danger">' +
-                                        '<span class="glyphicon glyphicon-trash"></span>' +
+                                    '<button type="button" class="btn btn-danger erase" data-form="' + key + '">' +
+                                        '<i class="fas fa-trash"></i>' +
                                     '</button>' +
                                 '</td>' +
                           "</tr>";
@@ -66,4 +66,16 @@ function showFormToFirebase() {
 //UPDATE:
 
 //DELETE:
-//El icono para borrar, está en el mismo apartado que el de [READ]. glyphicon-trash.
+//El icono para borrar, está en el mismo apartado que el de [READ]. <i class="fas fa-trash">.
+function eraseRowOnFirebase() {
+    var rowKeyToErase = this.getAttribute("data-form");
+    var refRowToErase = refForm.child(rowKeyToErase);
+    refRowToErase.remove();
+  }
+
+  if(rowsToShow != ""){
+      var eraseElements = document.getElementsByClassName("erase");
+      for(var i = 0; i < eraseElements.length; i++){
+          eraseElements[i].addEventListener("click", eraseRowOnFirebase, false);
+      }
+  }
