@@ -4,22 +4,22 @@ window.onload = inicialize;
 //Variables globales:
 var form;
 var refForm;
+var tbodyTableForm;
 
 function inicialize() {
     form = document.getElementById("form");
     form.addEventListener("submit", sendFormToFirebase, false);
+
+    //Coger el elemento tbody de la tabla:
+    tbodyTableForm = document.getElementById("tbody-table-form");
     //Referencia a la base de datos:
     refForm = firebase.database().ref().child("form");
     //Se indica "child" porque es un hijo del nodo raíz de la bbdd, es decir, del form.
     showFormToFirebase();
 }
 
-function showFormToFirebase() {
-    refForm.on("value", function (snap) {
-        console.log(snap.val())
-    })
-}
-
+//CRUD: CREATE, READ, UPDATE, DELETE.
+//CREATE:
 //Enviar el formulario a la base de datos:
 function sendFormToFirebase(event) {
     event.preventDefault();
@@ -32,3 +32,28 @@ function sendFormToFirebase(event) {
     });
     form.reset();
 }
+
+//READ:
+function showFormToFirebase() {
+    //El snap devuelve el valor de la refForm del propio form.
+    refForm.on("value", function (snap) {
+        var info = snap.val();
+        var rowsToShow = "";
+        //FOR EACH. Por cada clave en los datos:
+        for(var key in datos){
+            //muestra una fila. Es una String para realizar (concatenar) las filas (con tr). Y celdas (td).
+            rowsToShow += "<tr>" +
+                                "<td>"+ datos[key].name +"</td>" +
+                                "<td>"+ datos[key].surname +"</td>" +
+                                "<td>"+ datos[key].phone +"</td>" +
+                                "<td>"+ datos[key].email +"</td>" +
+                                "<td>"+ datos[key].comment +"</td>" +
+                                "<td></td>" +
+                                "<td></td>" +
+                          "</tr>";
+        }
+        tbodyTableForm.innerHTML = rowsToShow;
+    })
+}
+
+

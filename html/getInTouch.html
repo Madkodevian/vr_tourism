@@ -32,7 +32,7 @@
   <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-app.js"></script>
 
   <!-- Firebase store -->
-  <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-firestore.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-database.js"></script>
 
   <!-- TODO: Add SDKs for Firebase products that you want to use
      https://firebase.google.com/docs/web/setup#available-libraries -->
@@ -159,12 +159,40 @@
     </table>
   </div>
 
-  <!-- Form -->
+  <!-- FORM -->
+  <!-- TABLA DONDE SE MUESTRA EL FORM -->
   <br />
   <div class="container">
     <div class="row">
+      <div class="col-sm-7">
+        <!-- Tabla con los datos -->
+        <table class="table table-hover">
+          <caption></caption>
+          <thead>
+            <tr>
+              <th id="userInfo1" colspan="4">Datos del usuario</th>
+              <th id="comment1" colspan="1">Aportaciones</th>
+              <th id="btn1"></th>
+              <th id="btn2"></th>
+            </tr>
+            <tr>
+              <th id="name1">Nombre</th>
+              <th id="surname1">Apellidos</th>
+              <th id="phone1">Teléfono</th>
+              <th id="email1">Correo</th>
+              <th id="comment2">Comentario</th>
+              <th id="btn3"></th>
+              <th id="btn4"></th>
+            </tr>
+          </thead>
+          <tbody id="tbody-table-form"></tbody>
+        </table>
+      </div>
+      <div class="col-sm-1">
+        <!-- Crear un espacio -->
+      </div>
       <div class="col-sm-4">
-        <!-- Formulario de usuarios -->
+        <!-- Formulario para añadir/modificar datos -->
         <form id="form">
           <div class="form-group">
             <label for="name">Nombre</label>
@@ -191,11 +219,14 @@
           </div>
           <input type="submit" name="form" value="Enviar" onclick="alert('Gracias por contactar con nosotros.')">
           <input type="reset" name="btnDelete" value="Borrar todo">
-
         </form>
       </div>
     </div>
   </div>
+  <!-- FIN FORM -->
+  <!-- FIN TABLA DONDE SE MUESTRA EL FORM -->
+
+
   <br />
   <!-- footer -->
   <div class="jumbotron text-center footer footer-bgcolor menu-font">
