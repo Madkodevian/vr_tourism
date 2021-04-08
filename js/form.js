@@ -5,6 +5,7 @@ window.onload = inicialize;
 var form;
 var refForm;
 var tbodyTableForm;
+var rowsToShow;
 
 function inicialize() {
     form = document.getElementById("form");
@@ -38,7 +39,7 @@ function showFormToFirebase() {
     //El snap devuelve el valor de la refForm del propio form.
     refForm.on("value", function (snap) {
         var info = snap.val();
-        var rowsToShow = "";
+        rowsToShow = "";
         //FOR EACH. Por cada clave en los datos:
         for(var key in info){
             //muestra una fila. Es una String para realizar (concatenar) las filas (con tr). Y celdas (td).
@@ -60,6 +61,7 @@ function showFormToFirebase() {
         //(.innerHTML)Devuelve o establece la sintaxis HTML describiendo los descendientes del elemento.
         //En este caso, manda los datos de "rowstoshow" al tbody para mostrarlos.
         tbodyTableForm.innerHTML = rowsToShow;
+        console.log("innerHTML")
     })
 }
 
@@ -71,11 +73,13 @@ function eraseRowOnFirebase() {
     var rowKeyToErase = this.getAttribute("data-form");
     var refRowToErase = refForm.child(rowKeyToErase);
     refRowToErase.remove();
+    console.log("function eraseRowOnFirebase")
   }
 
   if(rowsToShow != ""){
       var eraseElements = document.getElementsByClassName("erase");
       for(var i = 0; i < eraseElements.length; i++){
           eraseElements[i].addEventListener("click", eraseRowOnFirebase, false);
+          console.log("if rowsToShow")
       }
   }
