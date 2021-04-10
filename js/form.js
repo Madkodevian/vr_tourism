@@ -17,6 +17,8 @@ function inicialize() {
     refForm = firebase.database().ref().child("form");
     //Se indica "child" porque es un hijo del nodo raíz de la bbdd, es decir, del form.
     showFormToFirebase();
+    //PROBANDO
+    eraseRowOnFirebase();
 }
 
 //CRUD: CREATE, READ, UPDATE, DELETE.
@@ -62,6 +64,14 @@ function showFormToFirebase() {
         //En este caso, manda los datos de "rowstoshow" al tbody para mostrarlos.
         tbodyTableForm.innerHTML = rowsToShow;
         console.log("innerHTML")
+        
+        if(rowsToShow != ""){
+            var eraseElements = document.getElementsByClassName("erase");
+            for(var i = 0; i < eraseElements.length; i++){
+                eraseElements[i].addEventListener("click", eraseRowOnFirebase, false);
+                console.log("if rowsToShow")
+            }
+        }
     })
 }
 
@@ -74,12 +84,4 @@ function eraseRowOnFirebase() {
     var refRowToErase = refForm.child(rowKeyToErase);
     refRowToErase.remove();
     console.log("function eraseRowOnFirebase")
-  }
-
-  if(rowsToShow != ""){
-      var eraseElements = document.getElementsByClassName("erase");
-      for(var i = 0; i < eraseElements.length; i++){
-          eraseElements[i].addEventListener("click", eraseRowOnFirebase, false);
-          console.log("if rowsToShow")
-      }
   }
