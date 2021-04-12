@@ -17,8 +17,6 @@ function inicialize() {
     refForm = firebase.database().ref().child("form");
     //Se indica "child" porque es un hijo del nodo raíz de la bbdd, es decir, del form.
     showFormToFirebase();
-    //PROBANDO
-    eraseRowOnFirebase();
 }
 
 //CRUD: CREATE, READ, UPDATE, DELETE.
