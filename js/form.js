@@ -50,6 +50,7 @@ function eraseRowOnFirebase(event) {
   var rowKeyToErase = event.target.getAttribute("data-form");
   var refRowToErase = refForm.child(rowKeyToErase);
   console.log(rowKeyToErase)
+  console.log(refForm)
   refRowToErase.remove();
   console.log("function eraseRowOnFirebase")
 }
