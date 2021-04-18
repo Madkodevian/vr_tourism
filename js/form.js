@@ -73,7 +73,7 @@ function showFormToFirebase() {
         "<td></td>" +
         //DELETE:
         '<td>' +
-        '<button type="button" class="btn btn-danger erase" onClick=eraseRowOnFirebase(event)>' +
+        '<button type="button" class="btn btn-danger erase" onclick="eraseRowOnFirebase(event)">' +
         '<i class="fas fa-trash erase" data-form="' + key + '">' + '</i>' +
         '</button>' +
         '</td>' +
