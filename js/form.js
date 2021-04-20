@@ -10,6 +10,8 @@ var CREATE = "Añadir formulario";
 var UPDATE = "Modificar formulario";
 var wayToSee = CREATE;
 var refRowToEdit;
+var refRowToErase;
+var rowKeyToErase;
 
 function inicialize() {
   //FORM CONTACT
@@ -86,7 +88,7 @@ function showFormToFirebase() {
         //DELETE:
         '<td>' +
             '<button type="button" class="btn btn-danger erase">' +
-            '<i class="fas fa-trash erase" data-form="' + key + '">' + '</i>' +
+            '<i class="fas fa-eraser erase" data-form="' + key + '">' + '</i>' +
             '</button>' +
         '</td>' +
         "</tr>";
@@ -106,7 +108,7 @@ function showFormToFirebase() {
       var eraseElements = document.getElementsByClassName("erase");
       for (i = 0; i < eraseElements.length; i++) {
         eraseElements[i].addEventListener("click", eraseRowOnFirebase, false);
-        console.log("if rowsToShow")
+        console.log("remove")
       }
     }
   })
@@ -116,8 +118,8 @@ function showFormToFirebase() {
 //El icono para borrar, está en el mismo apartado que el de [READ]. <i class="fas fa-trash erase"...>
 function eraseRowOnFirebase(event) {
   console.log("IN eraseRowOnFirebase")
-  var rowKeyToErase = event.target.getAttribute("data-form");
-  var refRowToErase = refForm.child(rowKeyToErase);
+  rowKeyToErase = event.target.getAttribute("data-form");
+  refRowToErase = refForm.child(rowKeyToErase);
   refRowToErase.remove();
   console.log("function eraseRowOnFirebase")
 }
