@@ -87,8 +87,8 @@ function showFormToFirebase() {
         "</td>" +
         //DELETE:
         '<td>' +
-            '<button type="button" class="btn btn-danger erase">' +
-            '<i class="fas fa-eraser erase" data-form="' + key + '">' + '</i>' +
+            '<button type="button" class="btn btn-danger tatiana">' +
+            '<i class="fas fa-eraser tatiana" data-form="' + key + '">' + '</i>' +
             '</button>' +
         '</td>' +
         "</tr>";
@@ -103,12 +103,12 @@ function showFormToFirebase() {
       var editElements = document.getElementsByClassName("edit");
       for (i = 0; i < editElements.length; i++) {
         editElements[i].addEventListener("click", editRowOnFirebase, false);
-        console.log("edit")
+        console.log("if edit")
       }
-      var eraseElements = document.getElementsByClassName("erase");
+      var eraseElements = document.getElementsByClassName("tatiana");
       for (i = 0; i < eraseElements.length; i++) {
         eraseElements[i].addEventListener("click", eraseRowOnFirebase, false);
-        console.log("remove")
+        console.log("if remove")
       }
     }
   })
