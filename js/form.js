@@ -55,6 +55,8 @@ function sendFormToFirebase(event) {
         email: event.target.email.value,
         comment: event.target.comment.value
       });
+      wayToSee = CREATE;
+      document.getElementById("button-send").value = CREATE;
       break;
   }
   form.reset();
