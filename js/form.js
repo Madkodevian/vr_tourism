@@ -6,6 +6,9 @@ var form;
 var refForm;
 var tbodyTableForm;
 var rowsToShow;
+var CREATE = "Añadir formulario";
+var UPDATE = "Modificar formulario";
+var wayToSee = CREATE;
 
 function inicialize() {
   //FORM CONTACT
@@ -117,10 +120,8 @@ function editRowOnFirebase(event){
     document.getElementById("email").value = data.email;
     document.getElementById("comment").value = data.comment;
   });
+  document.getElementById("button-send").value = UPDATE;
 }
-
-
-
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
