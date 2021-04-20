@@ -58,12 +58,16 @@ function showFormToFirebase() {
         "<td>" + info[key].phone + "</td>" +
         "<td>" + info[key].email + "</td>" +
         "<td>" + info[key].comment + "</td>" +
-        "<td></td>" +
+        "<td>" +
+            '<button type="button" class="btn btn-primary edit">' +
+            '<i class="fas fa-pencil-alt edit" data-form="' + key + '">' + '</i>' +
+            '</button>' +
+        "</td>" +
         //DELETE:
         '<td>' +
-        '<button type="button" class="btn btn-danger erase">' +
-        '<i class="fas fa-trash erase" data-form="' + key + '">' + '</i>' +
-        '</button>' +
+            '<button type="button" class="btn btn-danger erase">' +
+            '<i class="fas fa-trash erase" data-form="' + key + '">' + '</i>' +
+            '</button>' +
         '</td>' +
         "</tr>";
     }
@@ -73,8 +77,14 @@ function showFormToFirebase() {
     console.log("innerHTML")
 
     if (rowsToShow != "") {
+      var i;
+      var editElements = document.getElementsByClassName("edit");
+      for (i = 0; i < editElements.length; i++) {
+        editElements[i].addEventListener("click", editRowOnFirebase, false);
+        console.log("edit")
+      }
       var eraseElements = document.getElementsByClassName("erase");
-      for (var i = 0; i < eraseElements.length; i++) {
+      for (i = 0; i < eraseElements.length; i++) {
         eraseElements[i].addEventListener("click", eraseRowOnFirebase, false);
         console.log("if rowsToShow")
       }
@@ -83,7 +93,7 @@ function showFormToFirebase() {
 }
 
 //DELETE:
-//El icono para borrar, está en el mismo apartado que el de [READ]. <i class="fas fa-trash">.
+//El icono para borrar, está en el mismo apartado que el de [READ]. <i class="fas fa-trash erase"...>
 function eraseRowOnFirebase(event) {
   console.log("IN eraseRowOnFirebase")
   var rowKeyToErase = event.target.getAttribute("data-form");
@@ -94,8 +104,23 @@ function eraseRowOnFirebase(event) {
   console.log("function eraseRowOnFirebase")
 }
 
-
 //UPDATE:
+//El icono para editar, está en el mismo apartado que el de [READ]. <i class="fas fa-pencil-alt edit"...>
+function editRowOnFirebase(event){
+  var rowKeyToEdit = event.target.getAttribute("data-form");
+  var refRowToEdit = refForm.child(rowKeyToEdit);
+  refRowToEdit.once("value", function(snap){
+    var data = snap.val();
+    document.getElementById("name").value = data.name;
+    document.getElementById("surname").value = data.surname;
+    document.getElementById("phone").value = data.phone;
+    document.getElementById("email").value = data.email;
+    document.getElementById("comment").value = data.comment;
+  });
+}
+
+
+
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
