@@ -9,6 +9,7 @@ var rowsToShow;
 var CREATE = "Añadir formulario";
 var UPDATE = "Modificar formulario";
 var wayToSee = CREATE;
+var refRowToEdit;
 
 function inicialize() {
   //FORM CONTACT
@@ -36,13 +37,26 @@ function inicialize() {
 //Enviar el formulario a la base de datos:
 function sendFormToFirebase(event) {
   event.preventDefault();
-  refForm.push({
-    name: event.target.name.value,
-    surname: event.target.surname.value,
-    phone: event.target.phone.value,
-    email: event.target.email.value,
-    comment: event.target.comment.value
-  });
+  switch(wayToSee){
+    case CREATE:
+      refForm.push({
+        name: event.target.name.value,
+        surname: event.target.surname.value,
+        phone: event.target.phone.value,
+        email: event.target.email.value,
+        comment: event.target.comment.value
+      });
+      break;
+    case UPDATE:
+      refRowToEdit.update({
+        name: event.target.name.value,
+        surname: event.target.surname.value,
+        phone: event.target.phone.value,
+        email: event.target.email.value,
+        comment: event.target.comment.value
+      });
+      break;
+  }
   form.reset();
 }
 
@@ -111,7 +125,7 @@ function eraseRowOnFirebase(event) {
 //El icono para editar, está en el mismo apartado que el de [READ]. <i class="fas fa-pencil-alt edit"...>
 function editRowOnFirebase(event){
   var rowKeyToEdit = event.target.getAttribute("data-form");
-  var refRowToEdit = refForm.child(rowKeyToEdit);
+  refRowToEdit = refForm.child(rowKeyToEdit);
   refRowToEdit.once("value", function(snap){
     var data = snap.val();
     document.getElementById("name").value = data.name;
@@ -121,6 +135,7 @@ function editRowOnFirebase(event){
     document.getElementById("comment").value = data.comment;
   });
   document.getElementById("button-send").value = UPDATE;
+  wayToSee = UPDATE;
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
