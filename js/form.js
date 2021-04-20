@@ -43,18 +43,6 @@ function sendFormToFirebase(event) {
   form.reset();
 }
 
-//DELETE:
-//El icono para borrar, está en el mismo apartado que el de [READ]. <i class="fas fa-trash">.
-function eraseRowOnFirebase(event) {
-  console.log("IN eraseRowOnFirebase")
-  var rowKeyToErase = event.target.getAttribute("data-form");
-  var refRowToErase = refForm.child(rowKeyToErase);
-  console.log(rowKeyToErase)
-  console.log(refForm)
-  refRowToErase.remove();
-  console.log("function eraseRowOnFirebase")
-}
-
 //READ:
 function showFormToFirebase() {
   //El snap devuelve el valor de la refForm del propio form.
@@ -73,7 +61,7 @@ function showFormToFirebase() {
         "<td></td>" +
         //DELETE:
         '<td>' +
-        '<button type="button" class="btn btn-danger erase" onclick="eraseRowOnFirebase(event)">' +
+        '<button type="button" class="btn btn-danger erase">' +
         '<i class="fas fa-trash erase" data-form="' + key + '">' + '</i>' +
         '</button>' +
         '</td>' +
@@ -93,6 +81,19 @@ function showFormToFirebase() {
     }
   })
 }
+
+//DELETE:
+//El icono para borrar, está en el mismo apartado que el de [READ]. <i class="fas fa-trash">.
+function eraseRowOnFirebase(event) {
+  console.log("IN eraseRowOnFirebase")
+  var rowKeyToErase = event.target.getAttribute("data-form");
+  var refRowToErase = refForm.child(rowKeyToErase);
+  console.log(rowKeyToErase)
+  console.log(refForm)
+  refRowToErase.remove();
+  console.log("function eraseRowOnFirebase")
+}
+
 
 //UPDATE:
 
