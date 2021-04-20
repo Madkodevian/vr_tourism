@@ -77,6 +77,7 @@ function showFormToFirebase() {
         "<td>" + info[key].phone + "</td>" +
         "<td>" + info[key].email + "</td>" +
         "<td>" + info[key].comment + "</td>" +
+        //UPDATE:
         "<td>" +
             '<button type="button" class="btn btn-primary edit">' +
             '<i class="fas fa-pencil-alt edit" data-form="' + key + '">' + '</i>' +
@@ -117,8 +118,6 @@ function eraseRowOnFirebase(event) {
   console.log("IN eraseRowOnFirebase")
   var rowKeyToErase = event.target.getAttribute("data-form");
   var refRowToErase = refForm.child(rowKeyToErase);
-  console.log(rowKeyToErase)
-  console.log(refForm)
   refRowToErase.remove();
   console.log("function eraseRowOnFirebase")
 }
