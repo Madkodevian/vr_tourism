@@ -39,7 +39,7 @@ function inicialize() {
 //Enviar el formulario a la base de datos:
 function sendFormToFirebase(event) {
   event.preventDefault();
-  switch(wayToSee){
+  switch (wayToSee) {
     case CREATE:
       refForm.push({
         name: event.target.name.value,
@@ -81,15 +81,15 @@ function showFormToFirebase() {
         "<td>" + info[key].comment + "</td>" +
         //UPDATE:
         "<td>" +
-            '<button type="button" class="btn btn-primary edit">' +
-            '<i class="fas fa-pencil-alt edit" data-form="' + key + '">' + '</i>' +
-            '</button>' +
+        '<button type="button" class="btn btn-primary edit" data-form="' + key + '">' +
+        '<i class="fas fa-pencil-alt edit" data-form="' + key + '">' + '</i>' +
+        '</button>' +
         "</td>" +
         //DELETE:
         '<td>' +
-            '<button type="button" class="btn btn-danger tatiana">' +
-            '<i class="fas fa-eraser tatiana" data-form="' + key + '">' + '</i>' +
-            '</button>' +
+        '<button type="button" class="btn btn-danger eraseTheButton" data-form="' + key + '">' +
+        '<i class="fas fa-eraser eraseTheButton" data-form="' + key + '">' + '</i>' +
+        '</button>' +
         '</td>' +
         "</tr>";
     }
@@ -105,7 +105,7 @@ function showFormToFirebase() {
         editElements[i].addEventListener("click", editRowOnFirebase, false);
         console.log("if edit")
       }
-      var eraseElements = document.getElementsByClassName("tatiana");
+      var eraseElements = document.getElementsByClassName("eraseTheButton");
       for (i = 0; i < eraseElements.length; i++) {
         eraseElements[i].addEventListener("click", eraseRowOnFirebase, false);
         console.log("if remove")
@@ -119,6 +119,7 @@ function showFormToFirebase() {
 function eraseRowOnFirebase(event) {
   console.log("IN eraseRowOnFirebase")
   rowKeyToErase = event.target.getAttribute("data-form");
+  console.log("Elemento a borrar: "+rowKeyToErase)
   refRowToErase = refForm.child(rowKeyToErase);
   refRowToErase.remove();
   console.log("function eraseRowOnFirebase")
@@ -126,10 +127,10 @@ function eraseRowOnFirebase(event) {
 
 //UPDATE:
 //El icono para editar, está en el mismo apartado que el de [READ]. <i class="fas fa-pencil-alt edit"...>
-function editRowOnFirebase(event){
+function editRowOnFirebase(event) {
   var rowKeyToEdit = event.target.getAttribute("data-form");
   refRowToEdit = refForm.child(rowKeyToEdit);
-  refRowToEdit.once("value", function(snap){
+  refRowToEdit.once("value", function (snap) {
     var data = snap.val();
     document.getElementById("name").value = data.name;
     document.getElementById("surname").value = data.surname;
