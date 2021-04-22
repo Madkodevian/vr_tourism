@@ -81,8 +81,8 @@ function showFormToFirebase() {
         "<td>" + info[key].comment + "</td>" +
         //UPDATE:
         "<td>" +
-        '<button type="button" class="btn btn-primary edit" data-form="' + key + '">' +
-        '<i class="fas fa-pencil-alt edit" data-form="' + key + '">' + '</i>' +
+        '<button type="button" class="btn btn-primary editButton" data-form="' + key + '">' +
+        '<i class="fas fa-pencil-alt editButton" data-form="' + key + '">' + '</i>' +
         '</button>' +
         "</td>" +
         //DELETE:
@@ -100,7 +100,7 @@ function showFormToFirebase() {
 
     if (rowsToShow != "") {
       var i;
-      var editElements = document.getElementsByClassName("edit");
+      var editElements = document.getElementsByClassName("editButton");
       for (i = 0; i < editElements.length; i++) {
         editElements[i].addEventListener("click", editRowOnFirebase, false);
         console.log("if edit")

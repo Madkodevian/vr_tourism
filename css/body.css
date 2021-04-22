@@ -85,3 +85,13 @@ body{
 .rss-img{
   width: 8em;
 }
+
+/* TABLE */
+table {
+  border-collapse: collapse;
+  width: 400em;
+}
+
+th {
+  height: 50px;
+}
