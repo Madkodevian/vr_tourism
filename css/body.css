@@ -95,3 +95,18 @@ table {
 th {
   height: 50px;
 }
+
+/* BUTTONS */
+.editButton{
+  background-color:#308fb4 !important;
+  border: none;
+  width: 2.32em;
+  height: 2.32em;
+}
+
+.eraseButton{
+  background-color:#8f1323 !important;
+  border: none;
+  width: 2.32em;
+  height: 2.32em;
+}

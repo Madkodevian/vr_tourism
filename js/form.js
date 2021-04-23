@@ -87,8 +87,8 @@ function showFormToFirebase() {
         "</td>" +
         //DELETE:
         '<td>' +
-        '<button type="button" class="btn btn-danger eraseTheButton" data-form="' + key + '">' +
-        '<i class="fas fa-eraser eraseTheButton" data-form="' + key + '">' + '</i>' +
+        '<button type="button" class="btn btn-danger eraseButton" data-form="' + key + '">' +
+        '<i class="fas fa-eraser eraseButton" data-form="' + key + '">' + '</i>' +
         '</button>' +
         '</td>' +
         "</tr>";
@@ -105,7 +105,7 @@ function showFormToFirebase() {
         editElements[i].addEventListener("click", editRowOnFirebase, false);
         console.log("if edit")
       }
-      var eraseElements = document.getElementsByClassName("eraseTheButton");
+      var eraseElements = document.getElementsByClassName("eraseButton");
       for (i = 0; i < eraseElements.length; i++) {
         eraseElements[i].addEventListener("click", eraseRowOnFirebase, false);
         console.log("if remove")
