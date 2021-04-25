@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contacto</title>
+  <link rel="icon" href="../img/snorkel.png" type="image/png">
+
+  <!-- font awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+  <!-- jQuery library -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+  <!-- Popper JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+  <!-- Latest compiled JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+  <!-- The core Firebase JS SDK is always required and must be listed first -->
+  <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-app.js"></script>
+
+  <!-- Firebase store -->
+  <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-database.js"></script>
+
+  <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-storage.js"></script>
+
+  <!-- Firebase auth -->
+  <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-auth.js"></script>
+
+  <script>
+    // Your web app's Firebase configuration
+    var firebaseConfig = {
+      apiKey: "AIzaSyDQJowPbmBsVzQbWtSYRWmCIwlPHHfO4AE",
+      authDomain: "playas-canarias-2531b.firebaseapp.com",
+      databaseURL: "https://playas-canarias-2531b-default-rtdb.firebaseio.com",
+      projectId: "playas-canarias-2531b",
+      storageBucket: "playas-canarias-2531b.appspot.com",
+      messagingSenderId: "931673706117",
+      appId: "1:931673706117:web:8e8459b796a7e5ae9323ec"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+  </script>
+
+  <!-- CSS PROPIOS -->
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/menu.css">
+  <!-- Fuentes/Tipografías -->
+  <link rel="stylesheet" href="../css/fonts.css">
+  <!-- LOGIN -->
+  <link rel="stylesheet" href="../css/login.css">
+  <!-- JS PROPIOS -->
+  <script src="../js/form.js"></script>
+
+</head>
+
+
+<body>
+
+  <div class="overlay">
+    <!-- LOGN IN FORM by Omar Dsoky -->
+    <form>
+      <!--   con = Container  for items in the form-->
+      <div class="con">
+        <!--     Start  header Content  -->
+        <header class="head-form">
+          <h2>Iniciar sesión</h2>
+          <!--     A welcome message or an explanation of the login form -->
+          <p>Introduce tu nombre de usuario y contraseña</p>
+        </header>
+        <!--     End  header Content  -->
+        <br>
+        <div class="field-set">
+
+          <!--   user name -->
+          <span class="input-item">
+            <i class="fa fa-user-circle"></i>
+          </span>
+          <!--   user name Input-->
+          <input class="form-input" id="txt-input" type="text" placeholder="Nombre de usuario" required>
+
+          <br>
+
+          <!--   Password -->
+
+          <span class="input-item">
+            <i class="fa fa-key"></i>
+          </span>
+          <!--   Password Input-->
+          <input class="form-input" type="password" placeholder="Contraseña" id="pwd" name="password" required>
+
+          <!--      Show/hide password  -->
+          <span>
+            <i class="fa fa-eye" aria-hidden="true" id="eye"></i>
+          </span>
+
+          <br>
+          <!--        buttons -->
+          <!--      button LogIn -->
+          <button class="log-in"> Iniciar sesión </button>
+        </div>
+
+        <!--   other buttons -->
+        <div class="other">
+          <!--      Forgot Password button-->
+          <button class="btn submits frgt-pass">Olvidé la contraseña</button>
+          <!--     Sign Up button -->
+          <button class="btn submits sign-up">Registrarme
+            <!--         Sign Up font icon -->
+            <i class="fa fa-user-plus" aria-hidden="true"></i>
+            </button>
+
+            <!-- VOLVER -->
+            <button formaction="../index.html">Volver</button>
+            
+
+            <!--      End Other the Division -->
+        </div>
+        <!--   End Container  -->
+      </div>
+      <!-- End Form -->
+    </form>
+  </div>
+
+</body>
+
+</html>
