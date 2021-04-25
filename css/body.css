@@ -1,5 +1,19 @@
 body{
-    background-color: #EBF8FF !important;
+  background: linear-gradient(-45deg, #52eecc, #3ce797, #b9f1f8, #66b7cf) !important;
+	background-size: 400% 400% !important;
+	animation: gradient 15s ease infinite !important;
+}
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50% !important;
+	}
+	50% {
+		background-position: 100% 50% !important;
+	}
+	100% {
+		background-position: 0% 50% !important;
+	}
 }
 
 /* JUMBOTRON-GALERÍA */
@@ -109,4 +123,26 @@ th {
   border: none;
   width: 2.32em;
   height: 2.32em;
+}
+
+/* IMG-INDEX */
+.imgIndex{
+  width: 100%;
+  margin: 0%;
+  position: relative;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.first-txt {
+  position: absolute;
+  top: 6em;
+  left: 12.18em;
+  text-shadow: 1px 1px 2px #000000;
+}
+
+.second-txt {
+  position: absolute;
+  top: 10.5em;
+  left: 20.85em;
+  text-shadow: 1px 1px 2px #000000;
 }
