@@ -6,23 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Inicio</title>
     <link rel="icon" href="img/snorkel.png" type="image/png">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/menu.css">
-    <!-- Fuentes/Tipografías -->
-    <link rel="stylesheet" href="css/fonts.css">
-    <!-- Editar el body -->
-    <link rel="stylesheet" href="css/body.css">
-    <!-- Estilos para el botón de búsqueda. -->
+
+    <!-- font awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="css/searchButton.css">
-    <!-- Menú nuevo semitransparente -->
-    <link rel="stylesheet" href="css/nuevoMenu.css">
+
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-
-    <!-- BOOTSTRAP ICONS -->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
-        integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
 
     <!-- jQuery library -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -36,16 +25,13 @@
     <!-- The core Firebase JS SDK is always required and must be listed first -->
     <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-app.js"></script>
 
+    <!-- Firebase store -->
+    <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-database.js"></script>
+
+    <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-storage.js"></script>
+
     <!-- Firebase auth -->
     <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-auth.js"></script>
-
-    <!-- Firebase store -->
-    <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-firestore.js"></script>
-
-    <!-- TODO: Add SDKs for Firebase products that you want to use
-     https://firebase.google.com/docs/web/setup#available-libraries -->
-
-    <script src="https://www.gstatic.com/firebasejs/8.2.3/firebase-storage.js"></script>
 
     <script>
         // Your web app's Firebase configuration
@@ -62,12 +48,19 @@
         firebase.initializeApp(firebaseConfig);
     </script>
 
+    <!-- CSS PROPIOS -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/menu.css">
+    <!-- Fuentes/Tipografías -->
+    <link rel="stylesheet" href="css/fonts.css">
+
 </head>
 
 <body>
     <!-- MENÚ PRINCIPAL -->
     <nav class="navbar navbar-expand-sm sticky-top menu-bgcolor menu-font">
-        <a class="navbar-brand font-menu" href="index.html"><img src="img/snorkel_big_size.png" alt="Sample photo" width="38"></a>
+        <a class="navbar-brand font-menu" href="index.html"><img src="img/snorkel_big_size.png" alt="Sample photo"
+                width="38"></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -117,7 +110,7 @@
         <div class="row">
             <h1 class="first-txt">Ve a la playa y ponte las gafas</h1>
             <h3 class="second-txt">Bucea en la realidad virtual</h3>
-        
+
             <br />
             <div class="col-sm-4" id="place1">
                 <br />
@@ -131,37 +124,6 @@
                 <h2>¡Disfruta de un paisaje único!</h2>
                 <p>Poder contemplar la naturaleza de las playas de la isla y su bioma.</p>
                 <br>
-
-                <!-- Carousel -->
-                <div id="demo" class="carousel slide align-carousel-1" data-ride="carousel">
-                    <!-- Indicators -->
-                    <ul class="carousel-indicators">
-                        <li data-target="#demo" data-slide-to="0" class="active"></li>
-                        <li data-target="#demo" data-slide-to="1"></li>
-                        <li data-target="#demo" data-slide-to="2"></li>
-                    </ul>
-
-                    <!-- The slideshow -->
-                    <div class="carousel-inner align-carousel-2">
-                        <div class="carousel-item active">
-                            <img src="img/amadores21280.jpg" alt="Vegueta1">
-                        </div>
-                        <div class="carousel-item">
-                            <img src="img/beachclubamadores1280.jpg" alt="Vegueta2">
-                        </div>
-                        <div class="carousel-item">
-                            <img src="img/reservaguigui11280.jpg" alt="Vegueta3">
-                        </div>
-                    </div>
-
-                    <!-- Left and right controls -->
-                    <a class="carousel-control-prev" href="#demo" data-slide="prev">
-                        <span class="carousel-control-prev-icon"></span>
-                    </a>
-                    <a class="carousel-control-next" href="#demo" data-slide="next">
-                        <span class="carousel-control-next-icon"></span>
-                    </a>
-                </div>
             </div>
         </div>
     </div>
@@ -198,4 +160,5 @@
         </div>
     </div>
 </body>
+
 </html>

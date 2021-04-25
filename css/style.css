@@ -1,7 +1,42 @@
+
+/* CAROUSEL */
 .carousel-inner img {
-    width: 100%;
-    height: 100%;
-  }
+  width: 100%;
+  height: 100%;
+}
+
+.align-carousel-1{
+  margin-top: 7em;
+  width: 80%;
+  left: 6.98em;
+  margin-bottom: 2em;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  position: relative !important;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.align-carousel-2{
+  justify-content: center !important;
+  align-items: center !important;
+}
+
+/* CAROUSEL TEXT */
+
+.fst-c-txt {
+  position: absolute !important;
+  top: 0.2em !important;
+  left: 9.85em !important;
+  text-shadow: 1px 1px 1px #000000 !important;
+}
+
+.snd-c-txt {
+  position: absolute !important;
+  top: 2.2em !important;
+  left: 7.8em !important;
+  text-shadow: 1px 1px 1px #000000 !important;
+}
 
 body{
   position: relative; 
@@ -81,24 +116,141 @@ div.col-8 div {
   height: 270px !important;
 }
 
-/* IMÁGENES */
-.img-size{
-  width: 80em;
-  /* height: 480em; */
+body{
+  background-color:rgb(255, 255, 255) !important;
 }
 
-.cards {
+@keyframes gradient {
+	0% {
+		background-position: 0% 50% !important;
+	}
+	50% {
+		background-position: 100% 50% !important;
+	}
+	100% {
+		background-position: 0% 50% !important;
+	}
+}
+
+/* JUMBOTRON **PENDIENTE */
+
+.project-img-title{
+    background-color: #C8F69B !important;
+    border-radius: 3em / 3em !important;
+    border: 2px solid #16bb2c;
+    border-style: outset !important;
+    height: 14em;
+    width: 32em;
+    text-align: center;
+    margin-top: 3.5em;
+}
+
+/* PROJECT */
+/* RECUADROS-PROJECT */
+
+.rectangle-1{
+    background-color: #f8eaa9;
+    border-radius: 5em;
+    border: 2px solid #f3c460;
+    border-style: outset;
+}
+
+.rectangle-2{
+    background-color: #e9bb59;
+    border-radius: 3em / 3em;
+    border: 2px solid #cfa54a;
+    border-style: outset;
+}
+
+.section-1{
+    width: 68.85em !important;
+    height: 8em !important;
+  }
+  
+.section-2{
+  width: 68.85em !important;
+  height: 13em !important;
+}
+  
+.section-3{
+  width: 68.85em !important;
+  height: 19em !important;
+}
+  
+.section-4{
+  width: 68.85em !important;
+  height: 17.5em !important;
+}
+
+/* DROPDOWN-PROJECT */
+
+.dropdown-align{
+  margin-top: 2em;
+}
+
+
+
+/* WEATHER-TEMP */
+.weather{
   display: flex;
-  flex-wrap: wrap;
-  align-items: flex-start;
-  flex-direction: row;
-  max-height: 100vh;
-}
-.cards img {
-  margin: 0.5em;
-  border: 3px solid #000;
-  box-shadow: 3px 3px 8px 0px rgba(0,0,0,0.3); 
-  max-width: 23vw;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 2em;
 }
 
-.img:hover {filter: opacity(.5);}
+/* RSS-STYLE */
+.rss-img{
+  width: 8em;
+}
+
+/* TABLE */
+table {
+  border-collapse: collapse;
+  width: 400em;
+}
+
+th {
+  height: 50px;
+}
+
+/* BUTTONS */
+.editButton{
+  background-color:#308fb4 !important;
+  border: none;
+  width: 2.32em;
+  height: 2.32em;
+}
+
+.eraseButton{
+  background-color:#8f1323 !important;
+  border: none;
+  width: 2.32em;
+  height: 2.32em;
+}
+
+/* IMG-INDEX */
+.imgIndex{
+  width: 100%;
+  margin: 0%;
+  position: relative;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.first-txt {
+  position: absolute;
+  top: 6em;
+  left: 12.18em;
+  text-shadow: 1px 1px 2px #000000;
+}
+
+.second-txt {
+  position: absolute;
+  top: 10.5em;
+  left: 20.85em;
+  text-shadow: 1px 1px 2px #000000;
+}
+
+/* IMÁGENES */
+.img-location{
+  margin-bottom: 2em;
+}

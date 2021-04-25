@@ -6,15 +6,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Autóctono</title>
   <link rel="icon" href="../img/snorkel.png" type="image/png">
-  <link rel="stylesheet" href="../css/style.css">
-  <link rel="stylesheet" href="../css/menu.css">
-  <!-- Fuentes/Tipografías -->
-  <link rel="stylesheet" href="../css/fonts.css">
-  <!-- Editar el body -->
-  <link rel="stylesheet" href="../css/body.css">
-  <!-- Estilos para el botón de búsqueda. -->
+
+  <!-- font awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <link rel="stylesheet" href="../css/searchButton.css">
+
   <!-- Latest compiled and minified CSS -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 
@@ -31,12 +26,12 @@
   <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-app.js"></script>
 
   <!-- Firebase store -->
-  <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-firestore.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-database.js"></script>
 
-  <!-- TODO: Add SDKs for Firebase products that you want to use
-     https://firebase.google.com/docs/web/setup#available-libraries -->
+  <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-storage.js"></script>
 
-  <script src="https://www.gstatic.com/firebasejs/8.2.3/firebase-storage.js"></script>
+  <!-- Firebase auth -->
+  <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-auth.js"></script>
 
   <script>
     // Your web app's Firebase configuration
@@ -53,13 +48,17 @@
     firebase.initializeApp(firebaseConfig);
   </script>
 
-  <!-- Firebase auth -->
-  <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-auth.js"></script>
+  <!-- CSS PROPIOS -->
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/menu.css">
+  <!-- Fuentes/Tipografías -->
+  <link rel="stylesheet" href="../css/fonts.css">
 
 </head>
 <!-- MENÚ PRINCIPAL -->
 <nav class="navbar navbar-expand-sm sticky-top menu-bgcolor menu-font" aria-label="menú">
-  <a class="navbar-brand font-menu" href="../index.html"><img src="../img/snorkel_big_size.png" alt="Sample photo" width="38"></a>
+  <a class="navbar-brand font-menu" href="../index.html"><img src="../img/snorkel_big_size.png" alt="Sample photo"
+      width="38"></a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -91,16 +90,16 @@
       </li>
     </ul>
 
-      <!-- CAMBIAR EL /ACTION_PAGE.PHP PARA QUE FUNCIONE -->
-      <div class="search-container search-form">
-        <form action="/action_page.php">
-          <label for="search"></label>
-          <input type="search" id="search" placeholder="Escriba aquí..." name="search">
-          <input type="submit" value="Buscar">
-        </form>
-      </div>
+    <!-- CAMBIAR EL /ACTION_PAGE.PHP PARA QUE FUNCIONE -->
+    <div class="search-container search-form">
+      <form action="/action_page.php">
+        <label for="search"></label>
+        <input type="search" id="search" placeholder="Escriba aquí..." name="search">
+        <input type="submit" value="Buscar">
+      </form>
     </div>
-  </nav>
+  </div>
+</nav>
 <br />
 
 <!-- EL SCROLLSPY -->

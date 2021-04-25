@@ -6,15 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Galería</title>
     <link rel="icon" href="../img/snorkel.png" type="image/png">
-    <link rel="stylesheet" href="../css/style.css">
-    <link rel="stylesheet" href="../css/menu.css">
-    <!-- Fuentes/Tipografías -->
-    <link rel="stylesheet" href="../css/fonts.css">
-    <!-- Editar el body -->
-    <link rel="stylesheet" href="../css/body.css">
-    <!-- Estilos para el botón de búsqueda. -->
+
+    <!-- font awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="../css/searchButton.css">
+
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 
@@ -30,16 +25,13 @@
     <!-- The core Firebase JS SDK is always required and must be listed first -->
     <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-app.js"></script>
 
+    <!-- Firebase store -->
+    <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-database.js"></script>
+
+    <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-storage.js"></script>
+
     <!-- Firebase auth -->
     <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-auth.js"></script>
-
-    <!-- Firebase store -->
-    <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-firestore.js"></script>
-
-    <!-- TODO: Add SDKs for Firebase products that you want to use
-     https://firebase.google.com/docs/web/setup#available-libraries -->
-
-    <script src="https://www.gstatic.com/firebasejs/8.2.3/firebase-storage.js"></script>
 
     <script>
         // Your web app's Firebase configuration
@@ -56,13 +48,20 @@
         firebase.initializeApp(firebaseConfig);
     </script>
 
+    <!-- CSS PROPIOS -->
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/menu.css">
+    <!-- Fuentes/Tipografías -->
+    <link rel="stylesheet" href="../css/fonts.css">
+
 </head>
 
 <body>
 
     <!-- MENÚ PRINCIPAL -->
     <nav class="navbar navbar-expand-sm sticky-top menu-bgcolor menu-font">
-        <a class="navbar-brand font-menu" href="../index.html"><img src="../img/snorkel_big_size.png" alt="Sample photo" width="38"></a>
+        <a class="navbar-brand font-menu" href="../index.html"><img src="../img/snorkel_big_size.png" alt="Sample photo"
+                width="38"></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -107,32 +106,79 @@
 
     <div class="container">
         <div class="row">
-            <div class="col-sm-4">
-                <div class="jumbotron jumbotron-fluid project-img-title">
-                    <h1>Imágenes del proyecto</h1>
-                    <p>Aquí puedes ver algunas imágenes del proyecto de realidad virtual.</p>
+            <div class="col-sm">
+                <h1 class="fst-c-txt">Observa el entorno</h1>
+                <h3 class="snd-c-txt">Aquí podrás ver algunos de los lugares que visitaremos</h3>
+            </div>
+        </div>
+
+        <!-- Carousel -->
+        <div id="demo" class="carousel slide align-carousel-1" data-ride="carousel">
+            <ul class="carousel-indicators">
+                <li data-target="#demo" data-slide-to="0" class="active"></li>
+                <li data-target="#demo" data-slide-to="1"></li>
+                <li data-target="#demo" data-slide-to="2"></li>
+            </ul>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="../img/beachclubamadores1280.jpg" alt="Los Angeles">
+                    <div class="carousel-caption">
+                        <h3>Disfruta</h3>
+                        <p>Sumérgete en esta experiencia</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="../img/img_2.jpeg" alt="Chicago">
+                    <div class="carousel-caption">
+                        <h3>Éste es tu momento</h3>
+                        <p>No lo dejes pasar. ¡Aprovecha esta oportunidad!</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="../img/reservaguigui11280.jpg" alt="New York">
+                    <div class="carousel-caption">
+                        <h3>Atrévete</h3>
+                        <p>Explora lugares únicos</p>
+                    </div>
                 </div>
             </div>
+            <a class="carousel-control-prev" href="#demo" data-slide="prev">
+                <span class="carousel-control-prev-icon"></span>
+            </a>
+            <a class="carousel-control-next" href="#demo" data-slide="next">
+                <span class="carousel-control-next-icon"></span>
+            </a>
         </div>
+        <!-- Fin Carousel -->
         <br />
-        <!-- modal -->
-        <div class="row">
-            <div class="col-sm-4">
-                <main class="cards img img-size">
-                    <img src="../img/amadores21280.jpg" alt="Sample photo">
-                    <img src="../img/pardillocanario.jpg" alt="Sample photo">
-                    <img src="../img/reservaguigui11280.jpg" alt="Sample photo">
-                    <img src="../img/aguililla.jpg" alt="Sample photo">
-                    <img src="../img/beachclubamadores1280.jpg" alt="Sample photo">
-                    <img src="../img/reservaguigui.jpg" alt="Sample photo">
-                    <img src="../img/salinetas1.jpg" alt="Sample photo">
-                    <img src="../img/tauro1.jpg" alt="Sample photo">
-                    <img src="../img/dunas1.jpg" alt="Sample photo">
-                    <img src="../img/amadores1.jpg" alt="Sample photo">
-                    <img src="../img/bufadero_tauro.jpeg" alt="Sample photo">
-                </main>
+        <!-- Fotos -->
+        <!-- Gallery -->
+        <div class="row img-location">
+            <div class="col-lg-4 col-md-12 mb-4 mb-lg-0">
+                <img src="../img/img_4.jpeg" class="w-100 shadow-1-strong rounded mb-4" alt="img1" />
+
+                <img src="../img/img_6.jpeg" class="w-100 shadow-1-strong rounded mb-4" alt="img2" />
+            </div>
+
+            <div class="col-lg-4 mb-4 mb-lg-0">
+                <img src="../img/img_9.jpeg" class="w-100 shadow-1-strong rounded mb-4" alt="img3" />
+
+                <img src="../img/img_5.jpeg" class="w-100 shadow-1-strong rounded mb-4" alt="img4" />
+            </div>
+
+            <div class="col-lg-4 mb-4 mb-lg-0">
+                <img src="../img/img_7.jpeg" class="w-100 shadow-1-strong rounded mb-4" alt="img5" />
+
+                <img src="../img/PlayaDePozoIzquierdo.jpg" class="w-100 shadow-1-strong rounded mb-4" alt="img6" />
+
+                <img src="../img/tufia.JPG" class="w-100 shadow-1-strong rounded mb-4" alt="img7" />
+
+                <img src="../img/img_10.jpeg" class="w-100 shadow-1-strong rounded mb-4" alt="img7" />
+
             </div>
         </div>
+        <!-- Gallery -->
+        <!-- Fin Fotos -->
     </div>
 
     <!-- footer -->
